@@ -10,7 +10,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ########################################################################
 
 ########################################################################
-# TODO: 2.
+# DONE: 2.
 #   You should have RUN the  m5e_loopy_turtles  module and READ its code.
 #   (Do so now if you have not already done so.)
 #
@@ -33,9 +33,7 @@ window = rg.TurtleWindow()
 
 titus = rg.SimpleTurtle('turtle')
 titus.pen = rg.Pen('red', 6)
-
-jace = rg.SimpleTurtle()
-jace.pen = rg.Pen('midnight blue', 2)
+titus.speed = 20
 
 titus.draw_circle(5)
 
@@ -46,15 +44,50 @@ titus.left(90)
 titus.pen_down()
 titus.draw_circle(100)
 
-counter = 20
-for k in range(5):
+counter = 10
+for k in range(2):
     titus.pen_up()
     titus.right(90)
     titus.forward(20)
     titus.left(90)
     titus.pen_down()
-    titus.draw_circle(100 + counter)
+    titus.draw_circle(100 + counter*2)
     counter = counter + 10
+
+jace = rg.SimpleTurtle()
+jace.pen = rg.Pen('midnight blue', 6)
+jace.speed = 20
+
+jace.pen_up()
+jace.left(90)
+jace.forward(120)
+jace.pen_down()
+jace.right(90)
+
+# jace.right(60)
+# jace.forward(200)
+# jace.right(120)
+# jace.forward(200)
+# jace.right(120)
+# jace.forward(200)
+# jace.pen_up()
+# jace.right(60)
+
+counter = 0
+for k in range(3):
+    jace.right(60)
+    jace.forward(200+counter)
+    jace.right(120)
+    jace.forward(200+counter)
+    jace.right(120)
+    jace.forward(200+counter)
+    jace.left(30)
+    jace.pen_up()
+    jace.forward(40)
+    jace.right(90)
+    jace.pen_down()
+    counter = counter+70
+
 
 window.close_on_mouse_click()
 
